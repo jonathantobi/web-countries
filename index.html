@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Countries | UNASAT Web Assignment</title>
+
+    <!-- <link rel="stylesheet" href="dir/css/style.css"> -->
+
+</head>
+<body>
+
+
+
+    <div id="main-content">
+
+        <section class="search-flag">
+            <div class="search-data">
+                    <div class="search-inputs">
+                        <select name="allcountries" id="allcountries">
+                            <option value="">Select Country ...</option>
+                        </select>
+                
+                        <input type="search" name="countrysearch" id="countrysearch">
+                    </div>
+                    
+                    <div class="countrydata-border">
+                        <div class="country-data">
+                            <p>Capital: <span id="capital">-</span></p>
+                            <p>Timezone: <span id="timezone">-</span></p>
+                            <p>Language: <span id="language">-</span></p>
+                            <p>Currency: <span id="currency">-</span></p>
+                        </div>
+                
+                        <div class="borders">
+                            <h1>Borders</h1>
+                            <ul id="borders"></ul>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="flag-container">
+                <img id="flag" src="./dir/assets/Flag_of_None.svg.png" alt="country-flag" width="100">
+            </div>
+        </section>
+
+        <section class="regional">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Acronym</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+
+                <tbody id="regional-data">
+
+                </tbody>
+            </table>
+        </section>
+
+        <!-- <section class="map">
+            <div class="map-container">
+                <div id="googleMap" style="width:100%;height:400px;"></div>
+            </div>
+        </section> -->
+        
+    </div>
+
+    <script src="./dir/js/core.js"></script>
+    <script src="./dir/js/main.js"></script> 
+</body>
+</html>
