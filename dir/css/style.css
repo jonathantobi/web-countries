@@ -20,10 +20,12 @@ header{
     position: relative;
     width: 100%;
     height: 100px;
-    background-color: 
 }
 header nav{
     position: relative;
     width: 100%;
     height: 100%;
+}
+#map{ 
+    height: 300px; 
 }

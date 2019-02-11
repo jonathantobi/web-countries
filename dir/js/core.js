@@ -8,6 +8,7 @@ var currencySpan = document.getElementById('currency');
 var bordersUl = document.getElementById('borders');
 var flagImg = document.getElementById('flag');
 var regionalTableBody = document.getElementById('regional-data');
+var map = null;
 
 
 // Functions
@@ -74,6 +75,8 @@ function processCountry(countryName){
         tr.appendChild(tdName);
         regionalTableBody.appendChild(tr);
     })
+
+    updateMap(country.latlng);
 }
 
 function dropDownChange(){
@@ -81,8 +84,25 @@ function dropDownChange(){
     var country = processCountry(countryName);
 }
 
+function initMap(){
+    map = L.map('map').setView([4, -56], 7);
+
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', 
+    {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox.streets',
+        accessToken: 'pk.eyJ1Ijoiam9uYXRoYW50b2JpIiwiYSI6ImNpeTd0Ymx3bjAwM28yd21wOHhpMnM4NHgifQ.V3uKfxs2hlE_y7RnivsWTQ'
+    }).addTo(map);
+}
+
+function updateMap(latLng){
+    map.setView(latLng);
+}
+
 function init(){
     getCountryList();
+    initMap();
 }
 
 // Events
